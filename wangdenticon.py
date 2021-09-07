@@ -12,8 +12,7 @@ OPPOSITE_MAP = [0, 1, 8, 9, 4, 5, 12, 13, 2, 3, 10, 11, 6, 7, 14, 15]
 
 
 def wang_tile(*, n: int, fgcolor: Color, bgcolor: Color = WHITE) -> np.array:
-    if n < 0:
-        return wang_tile(-n, fgcolor)
+    n = -n if n < 0 else n
 
     grid = [bgcolor] * 9
     m = n % 16
